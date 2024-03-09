@@ -1,7 +1,7 @@
 import { StyleSheet, View, TextInput, Button } from 'react-native';
 import { useState } from 'react';
 
-export default function ToDoForm(){
+export default function ToDoForm({addTask}){
  
       //State variable handling text entered in Text box
       const [text, setText] = useState("");
@@ -12,9 +12,7 @@ export default function ToDoForm(){
       //Handle the 'task' button Event
       const submitHandler = (text) => {
         console.log(text);
-        setTask((prevTask) => {
-          return [{ task_name: text, task_id: Math.random().toString() }, ...prevTask]
-        })
+        addTask(text);
     }
     
     return(
