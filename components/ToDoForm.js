@@ -4,21 +4,15 @@ import { useState } from 'react';
 export default function ToDoForm({addTask}){
  
       //State variable handling text entered in Text box
-      const [text, setText] = useState("");
+      const [taskText, setTaskText] = useState("");
       //Text written by end user
-      const changeHandler = (val) => {
-        setText(val)
-      }
-      //Handle the 'task' button Event
-      const submitHandler = (text) => {
-        console.log(text);
-        addTask(text);
-    }
+
+
     
     return(
       <View>
-        <TextInput placeholder='Add new task here' onChangeText={changeHandler} />
-        <Button title='Add Task' onPress={() => submitHandler(text)} />
+        <TextInput placeholder='Add new task here' onChangeText={(text) => setTaskText(text)} value={taskText} />
+        <Button title='Add Task' onPress={() => addTask(taskText)} />
       </View>
     )
 }
