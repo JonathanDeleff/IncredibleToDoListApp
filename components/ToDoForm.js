@@ -11,17 +11,11 @@ export default function ToDoForm({addTask}){
     
     return(
       <View>
-        <TextInput placeholder='Add new task here' onChangeText={(text) => setTaskText(text)} value={taskText} />
+        <TextInput placeholder='Add new task here' onChangeText={(text) => setTaskText(text)} value={taskText}/>
         <Button title='Add Task' onPress={() => addTask(taskText)} />
       </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingTop: 40,
-      paddingHorizontal: 20,
-      backgroundColor: '#fff',
-    },
 });
